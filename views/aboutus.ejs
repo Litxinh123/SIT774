@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <title>Lillee Taste</title>
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="d-flex align-items-center justify-content-center" style="max-height: 600px; overflow: hidden;">
+    <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 1" class="d-block w-100">
+  </div>
+
+  <div class="px-5 fw-lighter">
+    <h1 class="my-5 text-center fs-3" id="bestseller">About Us</h1>
+    <p>
+      At Lillee Taste, we believe that cakes are not just desserts—they are an experience, a celebration of life, love, and
+      memories. Founded with a passion for creating the finest baked goods, our journey began with the simple idea of offering
+      more than just sweet treats. From the moment you walk through our doors (or visit our website), we want you to feel the
+      joy, excitement, and care that go into every cake we make. Our team of expert bakers and decorators is dedicated to
+      crafting cakes that aren’t just visually stunning but taste as extraordinary as they look. Whether it’s a birthday,
+      wedding, baby shower, or any other special occasion, we specialize in making those moments a little sweeter, a little
+      more magical. At Lillee Taste, every cake is an opportunity to tell a story, evoke emotions, and create lasting
+      memories. We understand that celebrations are about connection, so we work closely with you to ensure that every detail
+      of your cake matches your vision and the uniqueness of your event.
+    </p>
+    <p>
+      What truly sets Lillee Taste apart is our commitment to quality, craftsmanship, and customization. We believe that every
+      celebration deserves a cake that feels personal and special, and this philosophy drives everything we do. Our cakes are
+      made with the finest ingredients sourced from local, sustainable producers. From the highest-quality cocoa to the
+      freshest fruits and organic eggs, we ensure that each bite delivers rich flavor and impeccable texture. We offer a
+      variety of flavors—from traditional vanilla and chocolate to more adventurous options like salted caramel, lemon zest,
+      and rich red velvet—so every client can find something that excites their palate. But it’s not just about the flavor;
+      our team’s artistry ensures that the design of your cake reflects the personality and tone of your event. Whether it’s a
+      multi-tiered wedding cake with delicate sugar flowers, a quirky birthday cake shaped like a favorite character, or an
+      elegant anniversary cake adorned with hand-painted details, our decorators work closely with you to ensure every element
+      of the cake is a perfect match for your celebration. We don’t just bake cakes; we design edible works of art that evoke
+      joy and awe from the moment they’re revealed. We understand the importance of dietary preferences, so we also offer
+      gluten-free, dairy-free, vegan, and nut-free options to ensure that no one is left out of the celebration. Customization
+      isn’t just about design; it’s about ensuring every guest can enjoy the cake, no matter their dietary needs.
+    </p>
+    <p>
+      At Lillee Taste, we view our work as more than just baking—it’s about creating meaningful moments. Each cake we bake is
+      a part of someone’s story, and we consider it a privilege to be part of your most cherished celebrations. From the first
+      consultation to the final delivery, our team ensures that the entire process is smooth, enjoyable, and stress-free. Our
+      customer-centric approach means we go the extra mile to ensure your cake exceeds expectations. Whether you visit our
+      bakery or work with us remotely, we take the time to understand your needs, preferences, and the specific details of
+      your event, so we can bring your cake dreams to life. Our dedication to personalized service ensures that your
+      experience with us is as sweet as the cake itself. We take pride in delivering on time, every time, so you can rest
+      assured that your cake will arrive fresh, beautifully decorated, and ready to be the star of your celebration. Over the
+      years, we’ve had the honor of being part of countless weddings, birthdays, corporate events, and other milestones. It’s
+      not just about the cake; it’s about the joy and connection that it brings to the people sharing it. We believe that the
+      best celebrations are those that bring people together, and a great cake is the perfect way to do just that. Whether
+      you’re celebrating a big milestone or simply enjoying a moment with loved ones, Lillee Taste is here to make it sweeter.
+      We are grateful for every opportunity to create cakes that will be remembered for years to come, and we can’t wait to be
+      part of your next special occasion.
+    <p>
+      Love,<br>
+      Lillee Taste
+    </p>
+
+  </div>
+
+  <%- include('partials/footer') %>
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <!-- Custom validation script -->
+  <script>
+    // Get the form element
+    var form = document.querySelector('form');
+
+    // When the form is submitted
+    form.addEventListener('submit', function (event) {
+      // Check if the form is valid
+      if (!form.checkValidity()) {
+        // If not valid, prevent form submission and show feedback
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      // Add the 'was-validated' class to display validation feedback
+      form.classList.add('was-validated');
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <title>Lillee Taste</title>
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+
+  <div id="newCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#newCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#newCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#newCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item d-flex align-items-center justify-content-center active" style="max-height: 600px;">
+        <img
+          src="https://images.unsplash.com/photo-1505804750389-62ac45da38b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Slide 1" class="d-block w-100">
+        <div class="carousel-caption">"Indulge in sweetness, where every slice of cake is a moment of pure joy and
+          delight."</div>
+      </div>
+      <div class="carousel-item d-flex align-items-center justify-content-center" style="max-height: 600px;">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1726718421314-91dcf88ca873?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Slide 2" class="d-block w-100">
+        <div class="carousel-caption">"From every layer to every bite, our cakes make every occasion a little more
+          delicious."</div>
+      </div>
+    </div>
+    <!-- Left and right controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#newCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#newCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="px-4 fw-lighter">
+  <h1 class="my-5 fs-3" id="bestseller">Best Seller</h1>
+      <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-lg-3 g-5">
+          <% products.forEach(product=> { %>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-img-top" style="height: 400px; overflow: hidden;">
+                  <img src="<%= product.image %>" alt="<%= product.name %>" class="w-100 h-100" style="object-fit: cover;">
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h2 class="card-title fs-6">
+                    <%= product.name %>
+                  </h2>
+                  <p class="card-text">
+                    <%= product.short_description %>
+                  </p>
+                  <a href="/productdetail?name=<%= encodeURIComponent(product.name) %>" class="btn btn-primary mt-auto">View
+                    product</a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+      <h1 class="my-5 fs-3" id="services">Services</h1>
+      <% services.forEach(service=> { %>
+        <div class="card text-bg-dark border-0 mb-4" style="height: 18rem;">
+          <img src="<%= service.image %>" class="card-img" style="object-fit: cover; width: 100%; height: 100%;"
+            alt="<%= service.name %>">
+          <div class="card-img-overlay">
+            <h5 class="card-title">
+              <%= service.name %>
+            </h5>
+            <p class="card-text">
+              <%= service.description %>
+            </p>
+            <a href="/serviceform?serviceType=<%= encodeURIComponent(service.name) %>"
+              class="btn btn-primary text-center">Inquire Service</a>
+          </div>
+        </div>
+        <% }) %>
+
+        <h1 class="my-5 fs-3" id="feedback">Feedbacks</h1>
+        <div id="feedbackcarousel" class="carousel slide carousel-fade" data-ride="carousel">
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#feedbackcarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#feedbackcarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#feedbackcarousel" data-bs-slide-to="2"></button>
+          </div>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item d-flex align-items-center justify-content-center active" style="max-height: 300px;">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1682309735318-934795084028?q=80&w=2112&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Feedback 1" class="d-block w-100">
+              <div class="carousel-caption text-dark">The cake was incredibly moist and flavorful, with a perfect balance of
+                sweetness and rich frosting. Absolutely delicious!</div>
+            </div>
+
+            <div class="carousel-item d-flex align-items-center justify-content-center" style="max-height: 300px;">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1667354154657-5adc088ed55a?q=80&w=2086&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Feedback 2" class="d-block w-100">
+              <div class="carousel-caption text-dark">A delightful cake! The texture was soft, and the frosting complemented
+                the layers beautifully. Everyone loved it at the party.</div>
+            </div>
+
+            <div class="carousel-item d-flex align-items-center justify-content-center" style="max-height: 300px;">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1682310061171-61f65b741454?q=80&w=2112&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Feedback 2" class="d-block w-100">
+              <div class="carousel-caption text-dark">This cake exceeded expectations—perfectly baked, wonderfully smooth
+                frosting, and a taste that left everyone asking for more. Highly recommended!</div>
+            </div>
+          </div>
+          <!-- Left and right controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#feedbackcarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#feedbackcarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+  </div>
+
+
+
+
+
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

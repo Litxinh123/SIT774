@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <title>Lillee Taste</title>
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="px-5 py-5 fw-lighter">
+    <div class="container">
+      <div class="row d-flex">
+
+        <div class="col-sm-6 pe-5">
+          <img src="<%= product.image %>" alt="<%= product.name %>" class="img-fluid rounded">
+        </div>
+
+        <div class="col-sm-6">
+          <h1>
+            <%= product.name %>
+          </h1>
+          <p>
+            <%= product.description %>
+          </p>
+          <h2 class="fs-6">
+            <%= product.name %>: A Perfect Blend of Elegance and Flavor
+          </h2>
+          <p>
+            <%= product.short_description %>
+          </p>
+          <div class="d-flex align-items-center gap-2">
+            <a href="/productform" class="btn btn-primary text-center" style="width: 99%;">Place An Order</a>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <span class="mb-0">&#9432;</span>
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Policy for Placing An Order</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <ul>
+                    <li>When placing a cake order, customers must provide all necessary details to ensure their order is processed
+                      correctly and delivered on time. This includes specifying the type, size, flavor, and design of the cake, as
+                      well as any dietary restrictions or special requests.</li>
+                    <li>Customers should also provide the correct delivery address and contact information.</li>
+                    <li>To ensure the best quality and service, it is recommended to place cake orders at least 48 hours in
+                      advance. This allows ample time for preparation and customization, especially for larger or more intricate
+                      designs.</li>
+                    <li>In some cases, rush orders may be accommodated with an additional fee, subject to availability.</li>
+                    <li>Payment for the order is typically required at the time of booking to confirm the reservation. Various
+                      payment methods are accepted, including credit/debit cards, online payment platforms, or in-person payments
+                      depending on the vendor's policy.</li>
+                    <li>A confirmation of the order, along with an estimated delivery or pick-up time, will be sent to the
+                      customer once the order is finalized.</li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <%- include('partials/footer') %>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

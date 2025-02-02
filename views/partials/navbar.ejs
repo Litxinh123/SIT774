@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container-fluid px-5">
+    <a class="navbar-brand text-white fw-semibold" href="/">
+      <img src="img/birthdaycake.png" class="img-fluid me-2" alt="logo" style="width: 25px;">
+      <span>Lillee Taste</span>
+    </a>
+
+    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto d-flex align-items-center">
+        <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/aboutus">About Us</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/products">Products</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/services">Services</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="/blogs">Blogs</a></li>
+        <!-- User Nav -->
+        <li id="userNav" class="nav-item d-flex align-items-center ms-3"></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Function to update the navbar based on login status
+  function updateNavbar() {
+    const userNav = document.getElementById('userNav');
+    const loggedInUser = localStorage.getItem('loggedInUser');
+
+    if (loggedInUser) {
+      // If user is logged in, display their name and a logout button
+      userNav.innerHTML = `
+        <div class="d-flex align-items-center">
+          <img class="rounded-pill"
+            src="img/png-clipart-profile-icon-simple-user-icon-icons-logos-emojis-users-thumbnail.png"
+            alt="icon" style="width: 30px;">
+          <p class="text-white mb-0 ms-2 me-3 text-nowrap">Morning, ${loggedInUser}!</p>
+          <button id="logoutButton" class="btn btn-light text-primary">Logout</button>
+        </div>
+      `;
+
+      // Add event listener to the logout button
+      document.getElementById('logoutButton').addEventListener('click', () => {
+        // Remove the username from localStorage
+        localStorage.removeItem('loggedInUser');
+        // Redirect to the login page
+        window.location.href = '/login';
+      });
+    } else {
+      // If no user is logged in, show login button
+      userNav.innerHTML = `
+        <a class="btn btn-light text-primary" href="/login">Login</a>
+      `;
+    }
+  }
+
+  // Call the function on page load
+  updateNavbar();
+</script>
